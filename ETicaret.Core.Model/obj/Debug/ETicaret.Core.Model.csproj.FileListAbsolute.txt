@@ -1,0 +1,11 @@
+C:\Users\samet\source\repos\ETicaret\ETicaret.Core.Model\bin\Debug\ETicaret.Core.Model.dll.config
+C:\Users\samet\source\repos\ETicaret\ETicaret.Core.Model\bin\Debug\ETicaret.Core.Model.dll
+C:\Users\samet\source\repos\ETicaret\ETicaret.Core.Model\bin\Debug\ETicaret.Core.Model.pdb
+C:\Users\samet\source\repos\ETicaret\ETicaret.Core.Model\bin\Debug\EntityFramework.dll
+C:\Users\samet\source\repos\ETicaret\ETicaret.Core.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\samet\source\repos\ETicaret\ETicaret.Core.Model\bin\Debug\EntityFramework.xml
+C:\Users\samet\source\repos\ETicaret\ETicaret.Core.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\samet\source\repos\ETicaret\ETicaret.Core.Model\obj\Debug\ETicaret.Core.Model.csproj.CopyComplete
+C:\Users\samet\source\repos\ETicaret\ETicaret.Core.Model\obj\Debug\ETicaret.Core.Model.dll
+C:\Users\samet\source\repos\ETicaret\ETicaret.Core.Model\obj\Debug\ETicaret.Core.Model.pdb
+C:\Users\samet\source\repos\ETicaret\ETicaret.Core.Model\obj\Debug\ETicaret.Core.Model.csprojAssemblyReference.cache

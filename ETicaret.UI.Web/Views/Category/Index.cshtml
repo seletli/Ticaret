@@ -1,0 +1,53 @@
+﻿@model List<ETicaret.Core.Model.Entity.Product>
+@{
+    ViewBag.Title = "Index";
+    var category = (ETicaret.Core.Model.Entity.Category)ViewBag.category;
+}
+
+
+<h6>@category.Name Kategorisindeki Ürünler</h6>
+@{
+    foreach (var item in Model)
+    {
+        <div class="productBox">
+            <p class="title">@item.Name</p>
+            <img src="@item.ImageUrl" />
+            <p>
+                @item.Brand
+            </p>
+            <p>
+                @item.Price.ToString("##,## ₺")
+            </p>
+            <p>
+                @item.Description
+            </p>
+            <a href="/urun/@item.Name.Replace(" ","-")/@item.ID" class="btn btn-success">İncele</a>
+            <a href="#" class="btn btn-success"><i class="icon-bar"></i>Sepete Ekle</a>
+        </div>
+    }
+}
+<div class="row"></div>
+<style>
+    .productBox {
+        width: 200px;
+        float: left;
+        margin: 10px;
+        border: 2px solid #b9b9b9;
+        padding: 10px;
+        text-align: center;
+    }
+
+        .productBox img {
+            width: 100%;
+        }
+
+        .productBox title {
+            font-weight: bold;
+        }
+
+        .productBox p {
+            text-align: center;
+        }
+</style>
+
+

@@ -1,0 +1,81 @@
+﻿@model ETicaret.Core.Model.Entity.Order
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form action="/Admin/AdminOrders/Edit" method="post" enctype="multipart/form-data">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>ID</th>
+                <th>User</th>
+                <th>Total Price</th>
+
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Status</th>
+                <th>ID</th>
+                <th>User</th>
+                <th>Total Price</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="Status">
+
+                        </label>
+                        <select name="Status" class="form-control">
+
+                            <option>@ViewBag.status</option>
+                            
+                            
+                          @foreach (KeyValuePair<int,string> item in @ViewBag.statuses)
+                          {
+                                 <option value="@item.Key.ToString()">@item.Value </option>
+                          }
+
+
+
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="ID">
+
+                        </label>
+                        <input readonly name="ID" value="@Model.ID" class="form-control" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="User">
+
+                        </label>
+                        <input readonly name="User" value="@ViewBag.user" class="form-control" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="Total Price">
+
+                        </label>
+                        <input readonly name="Total Price" value="@Model.TotalPrice" class="form-control" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <input type="submit" value="Edit" class="form-control btn btn-primary" />
+
+</form>

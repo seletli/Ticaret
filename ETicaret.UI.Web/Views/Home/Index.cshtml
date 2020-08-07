@@ -1,0 +1,90 @@
+﻿
+@model List<ETicaret.Core.Model.Entity.Product>
+@{
+    ViewBag.Title = "Index";
+    var IsLogin = (bool)ViewBag.IsLogin;
+}
+
+<h2>E-Ticaret Sayfama Hoşgeldiniz</h2>
+<br />
+<h6>Son 5 Ürün</h6>
+@{
+    foreach (var item in Model)
+    {
+    <div class="productBox">
+        <p class="title">@item.Name</p>
+        <img src="@item.ImageUrl" />
+        <p>
+            @item.Brand
+        </p>
+        <p>
+            @item.Price.ToString("##,## ₺")
+        </p>
+        <p>
+            @item.Description
+        </p>
+        <a href="/urun/@item.Name.Replace(" ","-")/@item.ID" class="btn btn-success">İncele</a>
+        @if (IsLogin)
+        {
+            <a href="#" data-pID="@item.ID" class="btn btn-success addbasket"><i class="icon-bar"></i>Sepete Ekle</a>
+
+        }
+    </div>
+    }
+}
+<div id="AndModal" title="Teşekkürler">
+    Ürününüz Sepete Atılmıştır.<br />
+    <a href="/sepetim" class="btn btn-success">Sepete Git</a>
+</div>
+<div class="row"></div>
+<style>
+    .productBox {
+        width: 200px;
+        float: left;
+        margin: 10px;
+        border:2px solid #b9b9b9;
+        padding:10px;
+        text-align:center;
+    }
+
+        .productBox img {
+            width: 100%;
+        }
+
+        .productBox title {
+            font-weight: bold;
+        }
+        .productBox p{
+            text-align:center;
+        }
+</style>
+
+@section script{
+    <script type="text/javascript">
+        $(function () {
+            $("#AndModal").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $(".addbasket").on("click", function () {
+
+                var pid = $(this).attr("data-pID");
+                $.post("/Basket/AddProduct?productID=" + pid +"&quantity=1", function myfunction(data) {
+
+                    $("#AndModal").dialog("open");
+                });
+                
+                return false;
+            });
+        });
+    </script>
+    }
+
